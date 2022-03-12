@@ -7,4 +7,17 @@
 // }
 
 // ver2
+const queryText = document.querySelector(".input-container");
+const inputText = document.querySelector(".input-box");
 
+function search() {
+  queryText.addEventListener("submit", searchResult);
+}
+
+function searchResult(event) {
+  event.preventDefault();
+  const url = "https://www.google.com/search?q=" + inputText.value;
+  window.open(url);
+}
+
+search();
