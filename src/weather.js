@@ -10,24 +10,9 @@ function createWeather(weather) {
   );
   const temp = weather.main.temp;
   const name = weather.name;
-  const status = weather.weather[0].id;
-  const weatherTitle = weather.weather[0].description;
-  const sunrise = weather.sys.sunrise;
-  const sunset = weather.sys.sunset;
-  const getTime = new Date().getTime();
-  const str = getTime.toString();
-  const substr = str.substring(0, 10);
-  const number = Number(substr);
+
   textTemp.innerText = `${temp}°`;
   textLoaction.innerText = name;
-  textLoaction.setAttribute("title", `${name}`);
-  weatherIcon.setAttribute("title", `${weatherTitle}`);
-  weatherContainer.setAttribute("title", `${temp}°`);
-  if (number >= sunrise && number < sunset) {
-    weatherIcon.classList.add(`wi-owm-day-${status}`);
-  } else {
-    weatherIcon.classList.add(`wi-owm-night-${status}`);
-  }
 }
 
 function getWeather(coords) {
@@ -45,10 +30,11 @@ function getWeather(coords) {
     .then((response) => response.json())
     .then((json) => createWeather(json))
     .catch((error) => console.log("error", error));
+  console.log("ok");
 }
 
-function saveCoords(coordsObj) {
-  localStorage.setItem(COORDS, JSON.stringify(coordsObj));
+function saveCoords(coordsobj) {
+  localStorage.setItem(COORDS, JSON.stringify(coordsobj));
 }
 
 function succCoordsHandle(position) {
