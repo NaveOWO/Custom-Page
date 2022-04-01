@@ -107,11 +107,13 @@ input:focus {
 
 .middle .middle__welcomeText {
   color: #ffffff;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .middle .middle__name--container {
   border-bottom: 2px solid #ffffff;
+  padding-bottom: 20px;
+  padding-top: 20px;
   height: 40px;
   width:250px;
   display: flex;
@@ -122,13 +124,51 @@ input:focus {
   background-color: transparent;
   border: none;
   color: var(--color-white);
+  font-size: 50px;
   width: 80%;
-  margin-top: 10px;
+  height: 50px;
+  position: relative;
+  text-align: center;
+}
+
+.middle .middle__name--container .editBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  height: 18px;
+  width: 18px;
+  top: 400px;
+  right: 610px;
+  display: none;
+  position: absolute;
+}
+
+.material-icons-outlined {
+  font-size: 18px;
+  padding: 0;
+  display: none;
+  position: absolute;
+  right: 610px;
+  top: 400px;
+  width: 18px;
+  cursor: pointer;
 }
 
 .nameText::placeholder {
   color: gray;
   font-size: 20px;
   text-align: center;
+  padding: 20px 0;
+  margin-top: 10px;
+}
+
+.continueName {
+  color: #ffffff;
+  font-size: 50px;
+  height: 60px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
 }
 
