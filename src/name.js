@@ -5,6 +5,7 @@ function writeName() {
   const userName = user.value;
   if (userName) {
     const continueName = document.createElement("div");
+    continueName.setAttribute("id", "tempName");
     const deleteInput = document.getElementById("nameText");
     nameContain.appendChild(continueName);
     continueName.textContent = userName;
@@ -15,14 +16,19 @@ function writeName() {
   }
 }
 
-function editName(click) {
+function editName() {
   const editBtn = document.querySelector(".editBtn");
   editBtn.addEventListener("click", changeName);
-  console.log("ok");
 }
 
 function changeName(e) {
-  console.log("no");
+  e.preventDefault();
+  document.getElementById("nameText").style.display = "block";
+  console.log("ok2");
+  document.getElementById("editBtn").style.display = "none";
+  document.getElementById("editIcon").style.display = "none";
+  const tempDiv = document.getElementById("tempName");
+  tempDiv.remove();
 }
 
 editName();
